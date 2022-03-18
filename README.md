@@ -1,5 +1,7 @@
 # FlightPlanGenerator
 
+[GoTo Generator!](./flight_plan_sheet.html)
+
 飛行計画書をブラウザで作成できるプログラムです。一部機能の使用にはJavaScriptが必要です。
 
 飛行計画書のフォーマットは国土交通省が公開している資料をPDFに変換して使用しています。
