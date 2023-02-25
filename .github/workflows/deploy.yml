@@ -1,0 +1,46 @@
+name: Deploy
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "deploy"
+  cancel-in-progress: true
+
+env:
+  SSH_PRIVATE_KEY_FILE: private.key
+  UPLOAD_DIR: src
+  REMOTE_TARGET_DIR: web/airtote-flightplan/
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Change Permission
+        run: find ${{ env.UPLOAD_DIR }} -type f -follow -exec chmod 604 '{}' \;
+
+      - name: set private key value
+        run: echo "$SSH_PRIVATE_KEY" > ${{ env.SSH_PRIVATE_KEY_FILE }}
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: change permissions of SSH_PRIVATE_KEY_FILE
+        run: chmod 600 ${{ env.SSH_PRIVATE_KEY_FILE }}
+
+      - name: Upload files
+        run: >
+          rsync -av
+          -e "ssh -o StrictHostKeyChecking=no -i ${{ env.SSH_PRIVATE_KEY_FILE }} ${{ secrets.SSH_PORT_OPT_ARG }}"
+          ${{ env.UPLOAD_DIR }}/
+          ${{ secrets.SSH_USER_NAME }}@ssh.lolipop.jp:${{ env.REMOTE_TARGET_DIR }}
