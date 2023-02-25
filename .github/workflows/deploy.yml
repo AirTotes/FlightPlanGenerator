@@ -41,6 +41,7 @@ jobs:
       - name: Upload files
         run: >
           rsync -av
-          -e "ssh -o StrictHostKeyChecking=no -oHostKeyAlgorithms=+ssh-rsa -i ${{ env.SSH_PRIVATE_KEY_FILE }} ${{ secrets.SSH_PORT_OPT_ARG }}"
+          -e "ssh -o StrictHostKeyChecking=no -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa
+          -i ${{ env.SSH_PRIVATE_KEY_FILE }} ${{ secrets.SSH_PORT_OPT_ARG }}"
           ${{ env.UPLOAD_DIR }}/
           ${{ secrets.SSH_USER_NAME }}@ssh.lolipop.jp:${{ env.REMOTE_TARGET_DIR }}
