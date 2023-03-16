@@ -15,7 +15,7 @@ concurrency:
 
 env:
   SSH_PRIVATE_KEY_FILE: private.key
-  UPLOAD_DIR: src
+  UPLOAD_DIR: dst
   REMOTE_TARGET_DIR: web/airtote-flightplan/
 
 
@@ -27,6 +27,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Init yarn
+        run: npm i -g yarn
+
+      - name: Install dependencies
+        run: yarn install
+      
+      - name: Run script
+        run: yarn run inline
 
       - name: Change Permission
         run: find ${{ env.UPLOAD_DIR }} -type f -follow -exec chmod 604 '{}' \;
