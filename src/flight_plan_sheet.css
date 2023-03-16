@@ -1,0 +1,26 @@
+* {
+    font-size: 8pt;
+}
+input,textarea {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    line-height: 10pt;
+    padding-top: 0pt;
+}
+input:invalid,textarea:invalid {
+    border-color: red;
+    background: rgba(255, 127, 127, 0.2);
+}
+select {
+    position: absolute;
+    background: rgba(255, 255, 255, 1.0);
+}
+select:invalid {
+    border-color: red;
+    background: rgb(255, 180, 180);
+}
+.Strikethrough {
+    position: absolute;
+    height: 20pt;
+    width: 20pt;
+}
