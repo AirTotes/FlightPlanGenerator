@@ -13,6 +13,6 @@ cp $SRC_DIR/*.css $DST_DIR
 inline-stylesheets dst/flight_plan_sheet.html .
 rm $DST_DIR/*.css
 
-cp $SRC_DIR/*.svg $DST_DIR
-inline-images dst/flight_plan_sheet.html .
-rm $DST_DIR/*.svg
+# cp $SRC_DIR/*.svg $DST_DIR
+# inline-images dst/flight_plan_sheet.html .
+# rm $DST_DIR/*.svg
