@@ -12,6 +12,6 @@
   "dependencies": {
   },
   "scripts": {
-    "inline": "inline.sh"
+    "inline": "./inline.sh"
   }
 }
