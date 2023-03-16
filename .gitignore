@@ -1,3 +1,6 @@
+dst
+*.pdf
+
 # Logs
 logs
 *.log
