@@ -1,0 +1,16 @@
+{
+  "name": "flight_plan_generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AirTotes/FlightPlanGenerator.git",
+  "author": "TetsuOtter <31824852+TetsuOtter@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "inline-scripts": "^1.7.4"
+  },
+  "dependencies": {
+  },
+  "scripts": {
+  }
+}
