@@ -173,6 +173,88 @@ function SetValueFromParams()
   SetValueFromParamName('AdditionalRequirements');
 }
 
+function subscribeOnParentClickEvents(id, func)
+{
+  const elem = document.getElementById(id);
+  elem.parentNode.onclick = () => func(elem);
+}
+
+function subscribeOnChangeEvents(id, func)
+{
+  const elem = document.getElementById(id);
+  elem.onchange = func;
+}
+
+function SubscribeEvents()
+{
+  subscribeOnParentClickEvents('EmergencyRadio_UHF', ChangeVisibility);
+  subscribeOnParentClickEvents('EmergencyRadio_VHF', ChangeVisibility);
+  subscribeOnParentClickEvents('EmergencyRadio_ELT', ChangeVisibility);
+
+  subscribeOnParentClickEvents('SurvivalEquipment_All', v =>
+    ChangeVisibility(
+      v,
+      document.getElementById('SurvivalEquipment_Polar'),
+      document.getElementById('SurvivalEquipment_Desert'),
+      document.getElementById('SurvivalEquipment_Maritime'),
+      document.getElementById('SurvivalEquipment_Jungle'),
+    )
+  );
+  subscribeOnParentClickEvents('SurvivalEquipment_Polar', ChangeVisibility);
+  subscribeOnParentClickEvents('SurvivalEquipment_Desert', ChangeVisibility);
+  subscribeOnParentClickEvents('SurvivalEquipment_Maritime', ChangeVisibility);
+  subscribeOnParentClickEvents('SurvivalEquipment_Jungle', ChangeVisibility);
+
+  subscribeOnParentClickEvents('Jacket_All', v =>
+    ChangeVisibility(
+      v,
+      document.getElementById('Jacket_Light'),
+      document.getElementById('Jacket_Fluores'),
+      document.getElementById('Jacket_UHF'),
+      document.getElementById('Jacket_VHF'),
+    )
+  );
+  subscribeOnParentClickEvents('Jacket_Light', ChangeVisibility);
+  subscribeOnParentClickEvents('Jacket_Fluores', ChangeVisibility);
+  subscribeOnParentClickEvents('Jacket_UHF', ChangeVisibility);
+  subscribeOnParentClickEvents('Jacket_VHF', ChangeVisibility);
+
+  subscribeOnParentClickEvents('Dinghies', v =>
+    HasDinghiesCheckChanged(
+      v,
+      document.getElementById('Dinghies_Number'),
+      document.getElementById('Dinghies_Capacity'),
+      document.getElementById('Dinghies_Cover'),
+      document.getElementById('Dinghies_Colour'),
+    )
+  );
+  subscribeOnParentClickEvents('Dinghies_Cover', ChangeVisibility);
+
+  const CruisingSpeedUnit = document.getElementById('CruisingSpeedUnit');
+  const CruisingSpeed_Knot = document.getElementById('CruisingSpeed_Knot');
+  const CruisingSpeed_Mach = document.getElementById('CruisingSpeed_Mach');
+  CruisingSpeedUnit.onchange = ev => CruisingSpeedUnitSelected(ev.target.value, CruisingSpeed_Knot, CruisingSpeed_Mach);
+
+  const Level_Type = document.getElementById('Level_Type');
+  const Level_Num = document.getElementById('Level_Num');
+  Level_Type.onchange = ev => LevelTypeSelected(ev.target.value, Level_Num);
+
+  const Endurance_HH = document.getElementById('Endurance_HH');
+  const Endurance_MM = document.getElementById('Endurance_MM');
+  Endurance_MM.onchange = () => TimeMMCarryUp(Endurance_MM, Endurance_HH);
+
+  const PersonsOnBoard = document.getElementById('PersonsOnBoard');
+  const PersonsOnBoard_IsTBN = document.getElementById('PersonsOnBoard_IsTBN');
+  PersonsOnBoard_IsTBN.onchange = ev => PersonsOnBoard_IsTBNChanged(ev.target.checked, PersonsOnBoard);
+
+  const Remarks = document.getElementById('Remarks');
+  const Remarks_Strikethrough = document.getElementById('Remarks_Strikethrough');
+  Remarks.onchange = ev => onRemarksChanged(ev.target.value, Remarks_Strikethrough);
+
+  const GenPdfButton = document.getElementById('GenPdfButton');
+  GenPdfButton.onclick = ToPDF;
+}
+
 function LevelTypeSelected(value, input_elem) {
   switch (value) {
     case "VFR":
@@ -284,3 +366,4 @@ function onRemarksChanged(value, strikethrough)
 // DOMツリー構築完了直後に実行
 // ref: https://www.nishishi.com/javascript-tips/onload-page.html
 document.addEventListener("DOMContentLoaded", SetValueFromParams);
+document.addEventListener("DOMContentLoaded", SubscribeEvents);
