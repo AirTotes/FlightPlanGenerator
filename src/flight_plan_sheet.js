@@ -61,6 +61,18 @@ function SetValueFromParamNameToSelectElem(name)
     elem.value = value;
 }
 
+function SetStrikethroughFromParamName(name)
+{
+  const elem = document.getElementById(name);
+  const value = params[name];
+
+  if (value === null)
+    return;
+
+  const new_stroke = (value == 'true' ? 'black' : 'none')
+  elem.setAttribute(attr_name_stroke, new_stroke);
+}
+
 function LevelTypeSelected(value, input_elem) {
   switch (value) {
     case "VFR":
