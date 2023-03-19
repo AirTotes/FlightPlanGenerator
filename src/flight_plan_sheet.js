@@ -1,3 +1,5 @@
+"use strict";
+
 const attr_name_stroke = "stroke";
 
 // ref: https://stackoverflow.com/a/901144
