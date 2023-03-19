@@ -8,11 +8,11 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 
-function SetValueFromParamName(name, isValid)
+function SetValueFromParamName(name)
 {
   const elem = document.getElementById(name);
   const value = params[name];
-  const isValidCheckResult = isValid ? isValid(value) : true;
+  const isValidCheckResult = !(elem.pattern) || (new RegExp(elem.pattern)).test(value);
 
   console.debug('Target: ', name, '\nValue: ', value, '\nisValidCheckResult: ', isValidCheckResult);
 
