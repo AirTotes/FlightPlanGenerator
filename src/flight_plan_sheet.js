@@ -12,7 +12,13 @@ function SetValueFromParamName(name)
 {
   const elem = document.getElementById(name);
   const value = params[name];
-  const isValidCheckResult = !(elem.pattern) || (new RegExp(elem.pattern)).test(value);
+
+  const isValidCheckResult =
+    value
+    && (
+      !(elem.pattern)
+      || (new RegExp(elem.pattern)).test(value)
+    );
 
   console.debug('Target: ', name, '\nValue: ', value, '\nisValidCheckResult: ', isValidCheckResult);
 
