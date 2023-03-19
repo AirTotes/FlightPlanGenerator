@@ -11,6 +11,14 @@ input:invalid,textarea:invalid {
     border-color: red;
     background: rgba(255, 127, 127, 0.2);
 }
+input.btn {
+    position: relative;
+    font-size: large;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 6pt;
+    margin: 6pt;
+    border-radius: 4pt;
+}
 select {
     position: absolute;
     background: rgba(255, 255, 255, 1.0);
