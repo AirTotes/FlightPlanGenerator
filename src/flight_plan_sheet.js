@@ -1,5 +1,23 @@
 const attr_name_stroke = "stroke";
 
+// ref: https://stackoverflow.com/a/901144
+// ( https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript )
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+
+function SetValueFromParamName(name, isValid)
+{
+  const elem = document.getElementById(name);
+  const value = params[name];
+  const isValidCheckResult = isValid ? isValid(value) : true;
+
+  console.debug('Target: ', name, '\nValue: ', value, '\nisValidCheckResult: ', isValidCheckResult);
+
+  if (isValidCheckResult)
+    elem.value = value;
+}
+
 function LevelTypeSelected(value, input_elem) {
   switch (value) {
     case "VFR":
