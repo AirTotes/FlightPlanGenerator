@@ -73,6 +73,106 @@ function SetStrikethroughFromParamName(name)
   elem.setAttribute(attr_name_stroke, new_stroke);
 }
 
+function SetValueFromParams()
+{
+  // 航空機識別
+  SetValueFromParamName('AircraftIdentification');
+
+  // 飛行方式
+  SetValueFromParamNameToSelectElem('FlightRules');
+
+  // 飛行の種類
+  SetValueFromParamNameToSelectElem('TypeOfFlight');
+
+  // 飛行機の数
+  SetValueFromParamName('Number');
+
+  // 飛行機の型式
+  SetValueFromParamName('TypeOfAircraft');
+
+  // 後方乱気流区分
+  SetValueFromParamNameToSelectElem('WakeTurbulenceCategory');
+
+  // 使用する無線設備
+  SetValueFromParamNameToSelectElem('Equipment1');
+  SetValueFromParamName('Equipment2');
+  SetValueFromParamNameToSelectElem('Equipment3');
+
+  // 出発飛行場
+  SetValueFromParamName('DepartureAerodrome');
+
+  // 移動開始時刻
+  SetValueFromParamName('Time');
+
+  // 巡航速度
+  SetValueFromParamNameToSelectElem('CruisingSpeedUnit');
+  SetValueFromParamName('CruisingSpeed_Knot');
+  SetValueFromParamName('CruisingSpeed_Mach');
+
+  // 巡航高度
+  SetValueFromParamNameToSelectElem('Level_Type');
+  SetValueFromParamName('Level_Num');
+
+  // 経路
+  SetValueFromParamName('Route');
+
+  // 目的飛行場
+  SetValueFromParamName('DepartureAerodrome');
+
+  // 移動開始時刻
+  SetValueFromParamName('TotalEET');
+
+  // 代替飛行場
+  SetValueFromParamName('AltnAerodrome');
+  SetValueFromParamName('SecondAltnAerodrome');
+
+  // その他の情報
+  SetValueFromParamName('OtherInformation');
+
+  // 燃料搭載量
+  SetValueFromParamName('Endurance_HH');
+  SetValueFromParamName('Endurance_MM');
+
+  // 搭乗する総人数
+  SetValueFromParamName('PersonsOnBoard');
+
+  // 航空機用救命無線機
+  SetStrikethroughFromParamName('EmergencyRadio_UHF');
+  SetStrikethroughFromParamName('EmergencyRadio_VHF');
+  SetStrikethroughFromParamName('EmergencyRadio_ELT');
+
+  // 緊急用具
+  // TODO: 実装する
+  // SetStrikethroughFromParamName('SurvivalEquipment_All');
+  // SetStrikethroughFromParamName('SurvivalEquipment_Pokar');
+  // SetStrikethroughFromParamName('SurvivalEquipment_Desert');
+  // SetStrikethroughFromParamName('SurvivalEquipment_Maritime');
+  // SetStrikethroughFromParamName('SurvivalEquipment_Jungle');
+
+  // 救命胴衣
+  // TODO: 実装する
+  // SetStrikethroughFromParamName('Jacket_All');
+  // SetStrikethroughFromParamName('Jacket_Light');
+  // SetStrikethroughFromParamName('Jacket_Fluores');
+  // SetStrikethroughFromParamName('Jacket_UHF');
+  // SetStrikethroughFromParamName('Jacket_VHF');
+
+  // 救命ボート
+  // TODO: 実装する
+
+  // 航空機の色及びマーキング
+  SetValueFromParamName('AircraftColourAndMarkings');
+
+  // 備考
+  // TODO: 実装する
+
+  // 提出者
+  SetValueFromParamName('FilledBy');
+
+  // Additional Requirements
+  SetValueFromParamName('AdditionalRequirements');
+}
+
 function LevelTypeSelected(value, input_elem) {
   switch (value) {
     case "VFR":
@@ -178,3 +278,9 @@ function onRemarksChanged(value, strikethrough)
 {
   strikethrough.setAttribute(attr_name_stroke, value.length > 0 ? "none" : "black");
 }
+
+/* 初期処理 */
+
+// DOMツリー構築完了直後に実行
+// ref: https://www.nishishi.com/javascript-tips/onload-page.html
+document.addEventListener("DOMContentLoaded", SetValueFromParams);
