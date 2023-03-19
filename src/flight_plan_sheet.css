@@ -27,8 +27,3 @@ select:invalid {
     border-color: red;
     background: rgb(255, 180, 180);
 }
-.Strikethrough {
-    position: absolute;
-    height: 20pt;
-    width: 20pt;
-}
