@@ -20,7 +20,11 @@ function SetValueFromParamName(name)
       || (new RegExp(elem.pattern)).test(value)
     );
 
-  console.debug('Target: ', name, '\nValue: ', value, '\nisValidCheckResult: ', isValidCheckResult);
+  console.debug(
+    'Target: ', name,
+    '\nValue: ', value,
+    '\nisValidCheckResult: ', isValidCheckResult
+  );
 
   if (isValidCheckResult)
     elem.value = value;
