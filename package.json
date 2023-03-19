@@ -7,11 +7,17 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "inline-scripts": "^1.7.4"
+    "inline-scripts": "^1.7.4",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "jspdf": "^2.5.1",
+    "svg2pdf.js": "^2.2.1"
   },
   "scripts": {
-    "inline": "./inline.sh"
+    "inline": "./inline.sh",
+    "dev": "webpack --mode development",
+    "build": "webpack"
   }
 }
