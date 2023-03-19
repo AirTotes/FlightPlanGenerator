@@ -30,6 +30,37 @@ function SetValueFromParamName(name)
     elem.value = value;
 }
 
+function isValidSelection(elem, value)
+{
+  if (elem.nodeName != 'SELECT')
+    return false;
+  
+  return (
+    [...(elem.options)]
+      .filter(v => !(v.hidden))
+      .map(v => v.value)
+      .includes(value)
+    );
+}
+
+function SetValueFromParamNameToSelectElem(name)
+{
+  const elem = document.getElementById(name);
+  const isSelectElem = elem.nodeName == 'SELECT'
+  const value = params[name];
+  const isValidCheckResult = isValidSelection(elem, value);
+
+  console.debug(
+    'Target: ', name,
+    '\nisSelectElem: ', isSelectElem,
+    '\nValue: ', value,
+    '\nisValidCheckResult: ', isValidCheckResult
+  );
+
+  if (isSelectElem && isValidCheckResult)
+    elem.value = value;
+}
+
 function LevelTypeSelected(value, input_elem) {
   switch (value) {
     case "VFR":
