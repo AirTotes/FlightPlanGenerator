@@ -1,5 +1,8 @@
 "use strict";
 
+import { jsPDF } from 'jspdf'
+import 'svg2pdf.js'
+
 const attr_name_stroke = "stroke";
 
 // ref: https://stackoverflow.com/a/901144
@@ -359,6 +362,26 @@ function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
 function onRemarksChanged(value, strikethrough)
 {
   strikethrough.setAttribute(attr_name_stroke, value.length > 0 ? "none" : "black");
+}
+
+function ToPDF()
+{
+  const doc = new jsPDF();
+
+  const elem = document.getElementById('sheet_svg');
+
+  console.log(elem);
+  doc
+    .svg(elem, {
+      x: 0,
+      y: 0,
+      height: 1122.52,
+      width: 793.701,
+    })
+    .then(() => {
+      console.log(doc);
+      doc.save('test.pdf');
+    });
 }
 
 /* 初期処理 */
