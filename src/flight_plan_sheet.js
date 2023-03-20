@@ -1,7 +1,6 @@
 "use strict";
 
-import { jsPDF } from 'jspdf'
-import 'svg2pdf.js'
+import { ToPDF } from "./to_pdf";
 
 const attr_name_stroke = "stroke";
 
@@ -362,24 +361,6 @@ function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
 function onRemarksChanged(value, strikethrough)
 {
   strikethrough.setAttribute(attr_name_stroke, value.length > 0 ? "none" : "black");
-}
-
-function ToPDF()
-{
-  const doc = new jsPDF('p', 'pt', 'a4');
-
-  const elem = document.getElementById('sheet_svg');
-
-  doc
-    .svg(elem, {
-      x: 0,
-      y: 0,
-      height: 842,
-      width: 595,
-    })
-    .then(() => {
-      doc.save('test.pdf');
-    });
 }
 
 /* 初期処理 */
