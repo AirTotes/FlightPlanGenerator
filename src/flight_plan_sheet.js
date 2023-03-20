@@ -366,7 +366,7 @@ function onRemarksChanged(value, strikethrough)
 
 function ToPDF()
 {
-  const doc = new jsPDF();
+  const doc = new jsPDF('p', 'pt', 'a4');
 
   const elem = document.getElementById('sheet_svg');
 
@@ -374,8 +374,8 @@ function ToPDF()
     .svg(elem, {
       x: 0,
       y: 0,
-      height: 1122.52,
-      width: 793.701,
+      height: 842,
+      width: 595,
     })
     .then(() => {
       doc.save('test.pdf');
