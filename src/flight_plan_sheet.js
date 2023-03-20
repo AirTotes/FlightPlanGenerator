@@ -120,7 +120,7 @@ function SetValueFromParams()
   SetValueFromParamName('Route');
 
   // 目的飛行場
-  SetValueFromParamName('DepartureAerodrome');
+  SetValueFromParamName('DestinationAerodrome');
 
   // 移動開始時刻
   SetValueFromParamName('TotalEET');
