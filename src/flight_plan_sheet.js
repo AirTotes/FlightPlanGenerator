@@ -370,7 +370,6 @@ function ToPDF()
 
   const elem = document.getElementById('sheet_svg');
 
-  console.log(elem);
   doc
     .svg(elem, {
       x: 0,
@@ -379,7 +378,6 @@ function ToPDF()
       width: 793.701,
     })
     .then(() => {
-      console.log(doc);
       doc.save('test.pdf');
     });
 }
