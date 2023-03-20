@@ -739,143 +739,8 @@
 		<clipPath id="f">
 			<path d="M31.922 31.922h532.68v726H31.922Zm0 0" />
 		</clipPath>
-		<clipPath id="w">
-			<path d="M333.602 53H334v1h-.398Zm0 0" />
-		</clipPath>
-		<clipPath id="I">
-			<path d="M235.8 65h.2v1h-.2Zm0 0" />
-		</clipPath>
-		<clipPath id="M">
-			<path d="M130.8 65h.2v1h-.2Zm0 0" />
-		</clipPath>
-		<clipPath id="X">
-			<path d="M109.922 77H110v1h-.078Zm0 0" />
-		</clipPath>
-		<clipPath id="Y">
-			<path d="M558.719 101H559v1h-.281Zm0 0" />
-		</clipPath>
-		<clipPath id="ae">
-			<path d="M100.32 115h.68v1h-.68Zm0 0" />
-		</clipPath>
-		<clipPath id="ak">
-			<path d="M223.559 115H224v1h-.441Zm0 0" />
-		</clipPath>
-		<clipPath id="ap">
-			<path d="M142.559 140H143v1h-.441Zm0 0" />
-		</clipPath>
-		<clipPath id="aq">
-			<path d="M312.238 140H313v1h-.762Zm0 0" />
-		</clipPath>
-		<clipPath id="aL">
-			<path d="M110.879 178H111v1h-.121Zm0 0" />
-		</clipPath>
-		<clipPath id="aU">
-			<path d="M285.719 178H286v1h-.281Zm0 0" />
-		</clipPath>
-		<clipPath id="bf">
-			<path d="M524.398 178H525v1h-.602Zm0 0" />
-		</clipPath>
-		<clipPath id="bi">
-			<path d="M556.2 200h.8v1h-.8Zm0 0" />
-		</clipPath>
-		<clipPath id="bm">
-			<path d="M104.281 225H105v1h-.719Zm0 0" />
-		</clipPath>
-		<clipPath id="bp">
-			<path d="M110.879 280H111v1h-.121Zm0 0" />
-		</clipPath>
-		<clipPath id="bv">
-			<path d="M349.32 214h.68v1h-.68Zm0 0" />
-		</clipPath>
-		<clipPath id="bC">
-			<path d="M214.32 214h.68v1h-.68Zm0 0" />
-		</clipPath>
-		<clipPath id="bD">
-			<path d="M556.2 236h.8v1h-.8Zm0 0" />
-		</clipPath>
-		<clipPath id="bU">
-			<path d="M287.16 258h.84v1h-.84Zm0 0" />
-		</clipPath>
-		<clipPath id="bV">
-			<path d="M344.16 269h.84v1h-.84Zm0 0" />
-		</clipPath>
 		<clipPath id="bW">
 			<path d="M224 296h11.922v5H224Zm0 0" />
-		</clipPath>
-		<clipPath id="bX">
-			<path d="M235.922 302H236v1h-.078Zm0 0" />
-		</clipPath>
-		<clipPath id="bY">
-			<path d="M553.68 371h.32v1h-.32Zm0 0" />
-		</clipPath>
-		<clipPath id="cb">
-			<path d="M261.84 280h.16v1h-.16Zm0 0" />
-		</clipPath>
-		<clipPath id="ci">
-			<path d="M282.602 408H283v1h-.398Zm0 0" />
-		</clipPath>
-		<clipPath id="ck">
-			<path d="M162.36 394h.64v1h-.64Zm0 0" />
-		</clipPath>
-		<clipPath id="cn">
-			<path d="M556.2 419h.8v1h-.8Zm0 0" />
-		</clipPath>
-		<clipPath id="co">
-			<path d="M428.762 419H429v1h-.238Zm0 0" />
-		</clipPath>
-		<clipPath id="cp">
-			<path d="M343.922 419H344v1h-.078Zm0 0" />
-		</clipPath>
-		<clipPath id="cq">
-			<path d="M402.36 408h.64v1h-.64Zm0 0" />
-		</clipPath>
-		<clipPath id="cs">
-			<path d="M497.762 408H498v1h-.238Zm0 0" />
-		</clipPath>
-		<clipPath id="ct">
-			<path d="M125.879 430H126v1h-.121Zm0 0" />
-		</clipPath>
-		<clipPath id="cu">
-			<path d="M556.2 491h.8v1h-.8Zm0 0" />
-		</clipPath>
-		<clipPath id="cv">
-			<path d="M346.8 499h.2v1h-.2Zm0 0" />
-		</clipPath>
-		<clipPath id="cz">
-			<path d="M95.398 508H96v1h-.602Zm0 0" />
-		</clipPath>
-		<clipPath id="cF">
-			<path d="M96.84 519H97v1h-.16Zm0 0" />
-		</clipPath>
-		<clipPath id="cG">
-			<path d="M275.16 526h.84v1h-.84Zm0 0" />
-		</clipPath>
-		<clipPath id="cK">
-			<path d="M145.441 559H146v1h-.559Zm0 0" />
-		</clipPath>
-		<clipPath id="cO">
-			<path d="M145.32 585h.68v1h-.68Zm0 0" />
-		</clipPath>
-		<clipPath id="cU">
-			<path d="M115.8 618h.2v1h-.2Zm0 0" />
-		</clipPath>
-		<clipPath id="cV">
-			<path d="M109.441 631H110v1h-.559Zm0 0" />
-		</clipPath>
-		<clipPath id="cW">
-			<path d="M197.398 655H198v1h-.602Zm0 0" />
-		</clipPath>
-		<clipPath id="de">
-			<path d="M113.398 688H114v1h-.602Zm0 0" />
-		</clipPath>
-		<clipPath id="dh">
-			<path d="M149.398 721H150v1h-.602Zm0 0" />
-		</clipPath>
-		<clipPath id="dl">
-			<path d="M73.68 548H74v1h-.32Zm0 0" />
-		</clipPath>
-		<clipPath id="dn">
-			<path d="M216.238 548H217v1h-.762Zm0 0" />
 		</clipPath>
 		<clipPath id="dp">
 			<path d="M409.2 542h4.8v7.84h-4.8Zm0 0" />
@@ -891,12 +756,6 @@
 		</clipPath>
 		<clipPath id="dv">
 			<path d="M486 542h5v7.84h-5Zm0 0" />
-		</clipPath>
-		<clipPath id="dx">
-			<path d="M455.281 537H456v1h-.719Zm0 0" />
-		</clipPath>
-		<clipPath id="dy">
-			<path d="M418.2 537h.8v1h-.8Zm0 0" />
 		</clipPath>
 		<clipPath id="dz">
 			<path d="M348.238 590H353v7.84h-4.762Zm0 0" />
@@ -955,27 +814,6 @@
 		<clipPath id="dY">
 			<path d="M539.04 589.559h5.038v8.28h-5.039Zm0 0" />
 		</clipPath>
-		<clipPath id="dZ">
-			<path d="M247.441 585H248v1h-.559Zm0 0" />
-		</clipPath>
-		<clipPath id="ea">
-			<path d="M194.281 585H195v1h-.719Zm0 0" />
-		</clipPath>
-		<clipPath id="ec">
-			<path d="M289.68 585h.32v1h-.32Zm0 0" />
-		</clipPath>
-		<clipPath id="ef">
-			<path d="M366.602 579H367v1h-.398Zm0 0" />
-		</clipPath>
-		<clipPath id="eg">
-			<path d="M548.04 585h.96v1h-.96Zm0 0" />
-		</clipPath>
-		<clipPath id="eh">
-			<path d="M500.281 585H501v1h-.719Zm0 0" />
-		</clipPath>
-		<clipPath id="ei">
-			<path d="M460.68 585h.32v1h-.32Zm0 0" />
-		</clipPath>
 		<clipPath id="ej">
 			<path d="M210.36 638h5.038v7.84h-5.039Zm0 0" />
 		</clipPath>
@@ -988,44 +826,11 @@
 		<clipPath id="en">
 			<path d="M64.68 637.559h5.039v8.28h-5.04Zm0 0" />
 		</clipPath>
-		<clipPath id="eo">
-			<path d="M55.078 644H56v1h-.922Zm0 0" />
-		</clipPath>
-		<clipPath id="ep">
-			<path d="M134.64 644h.36v1h-.36Zm0 0" />
-		</clipPath>
-		<clipPath id="eq">
-			<path d="M203.398 644H204v1h-.602Zm0 0" />
-		</clipPath>
-		<clipPath id="er">
-			<path d="M240.602 644H241v1h-.398Zm0 0" />
-		</clipPath>
-		<clipPath id="es">
-			<path d="M402.48 644h.52v1h-.52Zm0 0" />
-		</clipPath>
-		<clipPath id="et">
-			<path d="M175.8 631h.2v1h-.2Zm0 0" />
-		</clipPath>
-		<clipPath id="eu">
-			<path d="M222.121 631H223v1h-.879Zm0 0" />
-		</clipPath>
-		<clipPath id="ew">
-			<path d="M82.2 677h.8v1h-.8Zm0 0" />
-		</clipPath>
 		<clipPath id="ex">
 			<path d="M65 704h4.719v7.84H65Zm0 0" />
 		</clipPath>
 		<clipPath id="ez">
 			<path d="M64.68 703.559h5.039v8.28h-5.04Zm0 0" />
-		</clipPath>
-		<clipPath id="eD">
-			<path d="M165.48 754h.52v1h-.52Zm0 0" />
-		</clipPath>
-		<clipPath id="eF">
-			<path d="M82.2 743h.8v1h-.8Zm0 0" />
-		</clipPath>
-		<clipPath id="eH">
-			<path d="M388.68 766h.32v1h-.32Zm0 0" />
 		</clipPath>
 	</defs>
 	<use href="#a" x="528.12" y="26.28" style="fill:#000;fill-opacity:1" />
