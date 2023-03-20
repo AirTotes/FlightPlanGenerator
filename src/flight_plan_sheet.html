@@ -19,6 +19,20 @@
 			height="1122.52"
 			viewBox="0 0 595.276 841.89">
 
+			<style>
+				.FormText {
+					font-family: monospace;
+					font-size: 8.5pt;
+					text-anchor: middle;
+				}
+			</style>
+			<defs>
+				<!-- `shape-inside: url(#svg_RouteArea)`の準備 -->
+				<path
+					id="svg_RouteArea"
+					d="M 240,294 l 323,0 0,63 -66,0 0,12 -464,0 0,-63 207,0 z"/>
+			</defs>
+
 			<!-- #region Flight Plan Sheet Base -->
 			<g>
 				<defs>
@@ -2279,6 +2293,306 @@
 					transform="matrix(1 0 0 -1 0 841.89)" />
 			</g>
 			<!-- #endregion Flight Plan Sheet Base -->
+
+			<!-- 航空機識別 -->
+			<text
+				id="svg_AircraftIdentification"
+				class="FormText"
+				textLength="98"
+				x="247"
+				y="201">JA123P&ensp;</text>
+
+			<!-- 航空機識別 -->
+			<text
+				id="svg_FlightRules"
+				class="FormText"
+				x="404"
+				y="201">Y</text>
+
+			<!-- 飛行の種類 -->
+			<text
+				id="svg_TypeOfFlight"
+				class="FormText"
+				x="505"
+				y="201">M</text>
+
+			<!-- 航空機の数 -->
+			<text
+				id="svg_Number"
+				class="FormText"
+				textLength="20"
+				x="64"
+				y="237">12</text>
+
+			<!-- 飛行機の型式 -->
+			<text
+				id="svg_TypeOfAircraft"
+				class="FormText"
+				textLength="54"
+				x="191"
+				y="237">1234</text>
+
+			<!-- 後方乱気流区分 -->
+			<text
+				id="svg_WakeTurbulenceCategory"
+				class="FormText"
+				x="295"
+				y="237">M</text>
+
+			<!-- 使用する無線設備 -->
+			<text
+				id="svg_Equipment1_2"
+				class="FormText"
+				x="445"
+				y="237">S999999999</text>
+			<text
+				id="svg_Equipment3"
+				class="FormText"
+				x="507"
+				y="237">G1</text>
+
+			<!-- 出発飛行場 -->
+			<text
+				id="svg_DepartureAerodrome"
+				class="FormText"
+				textLength="54"
+				x="127"
+				y="270">RJTT</text>
+
+			<!-- 移動開始時刻 -->
+			<text
+				id="svg_Time"
+				class="FormText"
+				textLength="54"
+				x="271"
+				y="270">1234</text>
+
+			<!-- 巡航速度 -->
+			<text
+				id="svg_CruisingSpeed"
+				class="FormText"
+				textLength="68"
+				x="87"
+				y="304">M1234</text>
+
+			<!-- 巡航高度 -->
+			<text
+				id="svg_Level"
+				class="FormText"
+				textLength="68"
+				x="183"
+				y="304">A9999</text>
+
+				<!-- 32,305 /H65,W533 -->
+			<!-- 経路 -->
+			<g>
+				<!-- Max Width: 319 -->
+				<text
+					id="svg_Route"
+					class="FormText"
+					style="text-anchor: start;"
+					x="242"
+					y="303">Test Route Text</text>
+
+				<!-- Max Width: 529 -->
+				<text
+					id="svg_Route"
+					class="FormText"
+					style="text-anchor: start;"
+					x="34"
+					y="315.75">Test Route Text 2</text>
+				<text
+					id="svg_Route"
+					class="FormText"
+					style="text-anchor: start;"
+					x="34"
+					y="328.5">Test Route Text 3</text>
+				<text
+					id="svg_Route"
+					class="FormText"
+					style="text-anchor: start;"
+					x="34"
+					y="341.25">Test Route Text 4</text>
+				<text
+					id="svg_Route"
+					class="FormText"
+					style="text-anchor: start;"
+					x="34"
+					y="354">Test Route Text 5</text>
+
+				<!-- Max Width: 463 -->
+				<text
+					id="svg_Route"
+					class="FormText"
+					style="text-anchor: start;"
+					x="34"
+					y="366.75">Test Route Text 6</text>
+			</g>
+
+			<!-- 目的飛行場 -->
+			<text
+				id="svg_DestinationAerodrome"
+				class="FormText"
+				textLength="54"
+				x="127"
+				y="420">RJTT</text>
+
+			<!-- 所要時間 -->
+			<text
+				id="svg_TotalEET"
+				class="FormText"
+				textLength="54"
+				x="270"
+				y="420">1234</text>
+
+			<!-- 代替飛行場1 -->
+			<text
+				id="svg_AltnAerodrome"
+				class="FormText"
+				textLength="54"
+				x="379"
+				y="420">RJAA</text>
+
+			<!-- 代替飛行場2 -->
+			<text
+				id="svg_SecondAltnAerodrome"
+				class="FormText"
+				textLength="54"
+				x="466"
+				y="420">RJAA</text>
+
+			<!-- Other Information -->
+			<g>
+				<text
+					id="svg_OtherInformation"
+					class="FormText"
+					style="text-anchor: start;"
+					x="52"
+					y="445">Other Information 1</text>
+				<text
+					id="svg_OtherInformation"
+					class="FormText"
+					style="text-anchor: start;"
+					x="34"
+					y="458.5">Other Information 2</text>
+				<text
+					id="svg_OtherInformation"
+					class="FormText"
+					style="text-anchor: start;"
+					x="34"
+					y="472">Other Information 3</text>
+				<text
+					id="svg_OtherInformation"
+					class="FormText"
+					style="text-anchor: start;"
+					x="34"
+					y="485.5">Other Information 4</text>
+			</g>
+
+			<!-- 燃料搭載量 -->
+			<text
+				id="svg_Endurance"
+				class="FormText"
+				textLength="54"
+				x="110"
+				y="549">1234</text>
+
+			<!-- 搭乗する総人数 -->
+			<text
+				id="svg_PersonsOnBoard"
+				class="FormText"
+				textLength="38"
+				x="246"
+				y="549">123</text>
+
+			<!-- 救命ボートの数 -->
+			<text
+				id="svg_Dinghies_Number"
+				class="FormText"
+				textLength="20"
+				x="101"
+				y="645">12</text>
+
+			<!-- 救命ボートのキャパシティ -->
+			<text
+				id="svg_Dinghies_Capacity"
+				class="FormText"
+				textLength="38"
+				x="161"
+				y="645">123</text>
+
+			<!-- 救命ボートの色 -->
+			<text
+				id="svg_Dinghies_Colour"
+				class="FormText"
+				style="text-anchor: start;"
+				x="247"
+				y="645">A99999</text>
+
+			<!-- 航空機の色及びマーキング -->
+			<text
+				id="svg_AircraftColourAndMarkings"
+				class="FormText"
+				style="text-anchor: start;"
+				x="90"
+				y="678">A99999</text>
+
+			<!-- 備考 -->
+			<text
+				id="svg_Remarks"
+				class="FormText"
+				style="text-anchor: start;"
+				x="90"
+				y="711">A99999</text>
+
+			<!-- 機長 -->
+			<text
+				id="svg_PilotInCommand"
+				class="FormText"
+				style="text-anchor: start;"
+				x="90"
+				y="744">Taro Tanaka</text>
+
+			<!-- 提出者 -->
+			<text
+				id="svg_FilledBy"
+				class="FormText"
+				x="122"
+				y="777">Jiro Tanaka</text>
+
+			<!-- AdditionalRequirements -->
+			<g>
+				<text
+					id="svg_AdditionalRequirements"
+					class="FormText"
+					style="text-anchor: start;"
+					x="215"
+					y="777">AdditionalRequirements 1</text>
+				<text
+					id="svg_AdditionalRequirements"
+					class="FormText"
+					style="text-anchor: start;"
+					x="215"
+					y="788">AdditionalRequirements 2</text>
+				<text
+					id="svg_AdditionalRequirements"
+					class="FormText"
+					style="text-anchor: start;"
+					x="215"
+					y="799">AdditionalRequirements 3</text>
+				<text
+					id="svg_AdditionalRequirements"
+					class="FormText"
+					style="text-anchor: start;"
+					x="215"
+					y="810">AdditionalRequirements 4</text>
+				<text
+					id="svg_AdditionalRequirements"
+					class="FormText"
+					style="text-anchor: start;"
+					x="215"
+					y="821">AdditionalRequirements 5</text>
+			</g>
 
 			<g
 				transform="translate(402 535)">
