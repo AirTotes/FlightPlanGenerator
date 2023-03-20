@@ -1,5 +1,6 @@
 "use strict";
 
+import { Regular } from './RobotoMono-Regular'
 import { ToPDF } from "./to_pdf";
 
 const attr_name_stroke = "stroke";
@@ -364,6 +365,16 @@ function onRemarksChanged(value, strikethrough)
 }
 
 /* 初期処理 */
+
+async function LoadFont()
+{
+  const font = new FontFace('RobotoMono', Regular)
+  await font.load();
+
+  document.fonts.add(font);
+}
+
+LoadFont();
 
 // DOMツリー構築完了直後に実行
 // ref: https://www.nishishi.com/javascript-tips/onload-page.html
