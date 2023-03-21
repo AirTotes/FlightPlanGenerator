@@ -16,10 +16,13 @@ const params = new Proxy(new URL(window.location.href), {
   },
 });
 
-function SetValueFromParamName(name)
+function SetValueFromParamName(name, func)
 {
   const elem = document.getElementById(name);
   const value = params[name];
+
+  if (func)
+    func(elem, value);
 
   const isValidCheckResult =
     value
@@ -150,29 +153,34 @@ function SetValueFromParams()
   SetStrikethroughFromParamName('EmergencyRadio_ELT');
 
   // 緊急用具
-  // TODO: 実装する
-  // SetStrikethroughFromParamName('SurvivalEquipment_All');
-  // SetStrikethroughFromParamName('SurvivalEquipment_Pokar');
-  // SetStrikethroughFromParamName('SurvivalEquipment_Desert');
-  // SetStrikethroughFromParamName('SurvivalEquipment_Maritime');
-  // SetStrikethroughFromParamName('SurvivalEquipment_Jungle');
+  SetStrikethroughFromParamName('SurvivalEquipment_All');
+  SetStrikethroughFromParamName('SurvivalEquipment_Pokar');
+  SetStrikethroughFromParamName('SurvivalEquipment_Desert');
+  SetStrikethroughFromParamName('SurvivalEquipment_Maritime');
+  SetStrikethroughFromParamName('SurvivalEquipment_Jungle');
 
   // 救命胴衣
-  // TODO: 実装する
-  // SetStrikethroughFromParamName('Jacket_All');
-  // SetStrikethroughFromParamName('Jacket_Light');
-  // SetStrikethroughFromParamName('Jacket_Fluores');
-  // SetStrikethroughFromParamName('Jacket_UHF');
-  // SetStrikethroughFromParamName('Jacket_VHF');
+  SetStrikethroughFromParamName('Jacket_All');
+  SetStrikethroughFromParamName('Jacket_Light');
+  SetStrikethroughFromParamName('Jacket_Fluores');
+  SetStrikethroughFromParamName('Jacket_UHF');
+  SetStrikethroughFromParamName('Jacket_VHF');
 
   // 救命ボート
-  // TODO: 実装する
+  SetStrikethroughFromParamName('Dinghies');
+  SetValueFromParamName('Dinghies_Number');
+  SetValueFromParamName('Dinghies_Capacity');
+  SetStrikethroughFromParamName('Dinghies_Cover');
+  SetValueFromParamName('Dinghies_Colour');
 
   // 航空機の色及びマーキング
   SetValueFromParamName('AircraftColourAndMarkings');
 
   // 備考
-  // TODO: 実装する
+  SetValueFromParamName(
+    'Remarks',
+    (_, value) => onRemarksChanged(value, document.getElementById('Remarks_Strikethrough'))
+  );
 
   // 提出者
   SetValueFromParamName('FilledBy');
