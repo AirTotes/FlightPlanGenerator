@@ -101,7 +101,11 @@ function setTextInSvg()
     4
   );
 
-  setText('PersonsOnBoard', 42, 3);
+  if (document.getElementById('PersonsOnBoard_IsTBN')?.checked)
+    setTextFromStr('svg_PersonsOnBoard', 'TBN', 42, 3);
+  else
+    setText('PersonsOnBoard', 42, 3);
+
   setText('Dinghies_Number', 22, 2);
   setText('Dinghies_Capacity', 42, 3);
   setText('Dinghies_Colour');
