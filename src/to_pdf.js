@@ -13,6 +13,11 @@ function setText(elemId, defaultTextLength, maxLen)
     return;
   }
 
+  setTextFromFormElem('svg_' + elemId, formElem, defaultTextLength, maxLen);
+}
+
+function setTextFromFormElem(svgElemId, formElem, defaultTextLength, maxLen)
+{
   let str = '';
   if (formElem?.type == 'time')
     str = formElem.value.toString().replace(':', '');
@@ -25,7 +30,7 @@ function setText(elemId, defaultTextLength, maxLen)
   if (formElem.disabled != false)
     str = '';
 
-  setTextFromStr('svg_' + elemId, str, defaultTextLength, maxLen);
+  setTextFromStr(svgElemId, str, defaultTextLength, maxLen);
 }
 
 function setTextFromStr(svgElemId, str, defaultTextLength, maxLen)
