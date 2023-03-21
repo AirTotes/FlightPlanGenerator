@@ -394,7 +394,7 @@ function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
 
 function onRemarksChanged(value, strikethrough)
 {
-  strikethrough.setAttribute(attr_name_stroke, value.length > 0 ? "none" : "black");
+  strikethrough.setAttribute(attr_name_stroke, value?.length > 0 ? "none" : "black");
 }
 
 /* 初期処理 */
