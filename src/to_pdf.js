@@ -25,6 +25,10 @@ function setText(elemId, defaultTextLength, maxLen)
     str = formElem.value.toString().replace(':', '');
   else
     str = formElem?.value?.toString() ?? '';
+
+  if (formElem?.type == 'number' && maxLen)
+    str = ('00000000' + str).slice(-maxLen);
+
   const strLen = str?.length ?? 0;
 
   elem.textContent = str;
