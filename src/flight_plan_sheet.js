@@ -342,7 +342,10 @@ function ChangeVisibility(...target)
   if (target[0].getAttribute(attr_name_stroke) === new_stroke)
     new_stroke = "none";
 
-  target.forEach(v => v?.setAttribute(attr_name_stroke, new_stroke));
+  target.forEach(v => {
+    v?.setAttribute(attr_name_stroke, new_stroke);
+    params[v.id] = (new_stroke == "black").toString();
+  });
 }
 
 let last_dinghis_num = "";
