@@ -57,6 +57,28 @@ function setTextFromStr(svgElemId, str, defaultTextLength, maxLen)
   }
 }
 
+function setMultiLineTextFromStr(elemId)
+{
+  const formElem = document.getElementById(elemId);
+  if (!formElem)
+  {
+    console.error(`Form Element (id: ${elemId}) not found.`);
+    return;
+  }
+
+  const elemArr = document.getElementsByClassName('svg_' + elemId);
+  if (!elemArr)
+  {
+    console.error(`SVG Element (id: ${'svg_' + elemId}) not found.`);
+    return;
+  }
+
+  const strArr = formElem.value?.split('\n') ?? [];
+
+  for (let i = 0; i < elemArr.length; i++)
+    elemArr[i].textContent = i < strArr.length ? strArr[i] : '';
+}
+
 function setTextInSvg()
 {
   setText('AircraftIdentification', 108, 7);
@@ -95,14 +117,14 @@ function setTextInSvg()
     LevelText += ('000' + (document.getElementById('Level_Num')?.value?.toString() ?? '')).slice(-3);
   setTextFromStr('svg_Level', LevelText, 75, 5);
 
-  // Route
+  setMultiLineTextFromStr('Route');
 
   setText('DestinationAerodrome', 58, 4);
   setText('TotalEET', 58, 4);
   setText('AltnAerodrome', 58, 4);
   setText('SecondAltnAerodrome', 58, 4);
 
-  // OtherInformation
+  setMultiLineTextFromStr('OtherInformation');
 
   setTextFromStr(
     'svg_Endurance',
@@ -125,7 +147,7 @@ function setTextInSvg()
   setText('PilotInCommand');
   setText('FilledBy');
 
-  // AdditionalRequirements
+  setMultiLineTextFromStr('AdditionalRequirements');
 }
 
 export function ToPDF()
