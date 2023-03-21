@@ -373,6 +373,8 @@ function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
 
   hasDinghies.setAttribute(attr_name_stroke, new_stroke_color);
   hasCover.setAttribute(attr_name_stroke, new_stroke_color);
+  params[hasDinghies.id] = params[hasCover.id] = (new_stroke_color == "black").toString();
+
   num.disabled = new_input_disabled;
   cap.disabled = new_input_disabled;
   colour.disabled = new_input_disabled;
