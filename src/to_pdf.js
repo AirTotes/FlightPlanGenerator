@@ -29,6 +29,9 @@ function setText(elemId, defaultTextLength, maxLen)
   if (formElem?.type == 'number' && maxLen)
     str = ('00000000' + str).slice(-maxLen);
 
+  if (formElem.disabled != false)
+    str = '';
+
   const strLen = str?.length ?? 0;
 
   elem.textContent = str;
