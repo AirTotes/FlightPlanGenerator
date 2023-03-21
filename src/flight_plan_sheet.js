@@ -413,3 +413,4 @@ LoadFont();
 // ref: https://www.nishishi.com/javascript-tips/onload-page.html
 document.addEventListener("DOMContentLoaded", SetValueFromParams);
 document.addEventListener("DOMContentLoaded", SubscribeEvents);
+// document.addEventListener("DOMContentLoaded", ToPDF);

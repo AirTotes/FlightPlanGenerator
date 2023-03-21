@@ -170,5 +170,7 @@ export function ToPDF()
     .then(() => {
       svgTextGroup.style.visibility = 'hidden';
       doc.save('test.pdf');
+      // const elem = document.getElementById('preview');
+      // elem.setAttribute('src', doc.output('datauristring'));
     });
 }
