@@ -6,13 +6,6 @@ import './RobotoMono-Regular'
 
 function setText(elemId, defaultTextLength, maxLen)
 {
-  const elem = document.getElementById('svg_' + elemId);
-  if (!elem)
-  {
-    console.error(`SVG Element (id: ${elemId}) not found. (str: '${str}', defaultTextLength: ${defaultTextLength}, maxLen: ${maxLen})`);
-    return;
-  }
-
   const formElem = document.getElementById(elemId);
   if (!formElem)
   {
@@ -31,6 +24,18 @@ function setText(elemId, defaultTextLength, maxLen)
 
   if (formElem.disabled != false)
     str = '';
+
+  setTextFromStr('svg_' + elemId, str, defaultTextLength, maxLen);
+}
+
+function setTextFromStr(svgElemId, str, defaultTextLength, maxLen)
+{
+  const elem = document.getElementById(svgElemId);
+  if (!elem)
+  {
+    console.error(`SVG Element (id: ${svgElemId}) not found. (str: '${str}', defaultTextLength: ${defaultTextLength}, maxLen: ${maxLen})`);
+    return;
+  }
 
   const strLen = str?.length ?? 0;
 
