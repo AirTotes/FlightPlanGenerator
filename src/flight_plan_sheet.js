@@ -179,13 +179,13 @@ function SetValueFromParams()
 function subscribeOnParentClickEvents(id, func)
 {
   const elem = document.getElementById(id);
-  elem.parentNode.onclick = () => func(elem);
+  elem.parentNode.addEventListener("click", () => func(elem));
 }
 
 function subscribeOnChangeEvents(id, func)
 {
   const elem = document.getElementById(id);
-  elem.onchange = func;
+  elem.addEventListener("change", func);
 }
 
 function SubscribeEvents()
@@ -233,26 +233,36 @@ function SubscribeEvents()
   );
   subscribeOnParentClickEvents('Dinghies_Cover', ChangeVisibility);
 
-  const CruisingSpeedUnit = document.getElementById('CruisingSpeedUnit');
   const CruisingSpeed_Knot = document.getElementById('CruisingSpeed_Knot');
   const CruisingSpeed_Mach = document.getElementById('CruisingSpeed_Mach');
-  CruisingSpeedUnit.onchange = ev => CruisingSpeedUnitSelected(ev.target.value, CruisingSpeed_Knot, CruisingSpeed_Mach);
+  subscribeOnChangeEvents(
+    'CruisingSpeedUnit',
+    ev => CruisingSpeedUnitSelected(ev.target.value, CruisingSpeed_Knot, CruisingSpeed_Mach)
+  );
 
-  const Level_Type = document.getElementById('Level_Type');
   const Level_Num = document.getElementById('Level_Num');
-  Level_Type.onchange = ev => LevelTypeSelected(ev.target.value, Level_Num);
+  subscribeOnChangeEvents(
+    'Level_Type',
+    ev => LevelTypeSelected(ev.target.value, Level_Num)
+  );
 
   const Endurance_HH = document.getElementById('Endurance_HH');
-  const Endurance_MM = document.getElementById('Endurance_MM');
-  Endurance_MM.onchange = () => TimeMMCarryUp(Endurance_MM, Endurance_HH);
+  subscribeOnChangeEvents(
+    'Endurance_MM',
+    ev => TimeMMCarryUp(ev.target, Endurance_HH)
+  );
 
   const PersonsOnBoard = document.getElementById('PersonsOnBoard');
-  const PersonsOnBoard_IsTBN = document.getElementById('PersonsOnBoard_IsTBN');
-  PersonsOnBoard_IsTBN.onchange = ev => PersonsOnBoard_IsTBNChanged(ev.target.checked, PersonsOnBoard);
+  subscribeOnChangeEvents(
+    'PersonsOnBoard_IsTBN',
+    ev => PersonsOnBoard_IsTBNChanged(ev.target.checked, PersonsOnBoard)
+  );
 
-  const Remarks = document.getElementById('Remarks');
   const Remarks_Strikethrough = document.getElementById('Remarks_Strikethrough');
-  Remarks.onchange = ev => onRemarksChanged(ev.target.value, Remarks_Strikethrough);
+  subscribeOnChangeEvents(
+    'Remarks',
+    ev => onRemarksChanged(ev.target.value, Remarks_Strikethrough)
+  );
 
   const GenPdfButton = document.getElementById('GenPdfButton');
   GenPdfButton.onclick = ToPDF;
