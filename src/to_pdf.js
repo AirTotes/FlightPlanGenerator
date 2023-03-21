@@ -62,7 +62,13 @@ function setTextInSvg()
   setText('AircraftIdentification', 108, 7);
   setText('FlightRules');
   setText('TypeOfFlight');
-  setText('Number', 22, 2);
+
+  const form_Number = document.getElementById('Number');
+  if (1 < form_Number.value)
+    setTextFromFormElem('svg_Number', form_Number, 22, 2);
+  else
+    setTextFromStr('svg_Number', '');
+
   setText('TypeOfAircraft', 58, 4);
   setText('WakeTurbulenceCategory');
 
