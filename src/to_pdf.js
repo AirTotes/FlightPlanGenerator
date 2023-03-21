@@ -61,13 +61,28 @@ function setTextInSvg()
   setText('TypeOfAircraft', 58, 4);
   setText('WakeTurbulenceCategory');
 
-  // Equipment1_2
+  setTextFromStr(
+    'svg_Equipment1_2',
+    (document.getElementById('Equipment1')?.value ?? '')
+    + (document.getElementById('Equipment2')?.value ?? '')
+  );
+
   setText('Equipment3');
   setText('DepartureAerodrome', 58, 4);
   setText('Time', 58, 4);
 
-  // CruisingSpeed
-  // Level
+  const CruisingSpeedUnitValue = document.getElementById('CruisingSpeedUnit')?.value;
+  let CruisingSpeedNumText = '';
+  if (CruisingSpeedUnitValue == 'N')
+    CruisingSpeedNumText = ('0000' + (document.getElementById('CruisingSpeed_Knot')?.value?.toString() ?? '')).slice(-4);
+  else if (CruisingSpeedUnitValue == 'M')
+    CruisingSpeedNumText = ((document.getElementById('CruisingSpeed_Mach')?.value?.replace('.', '') ?? '') + '000').slice(0, 3);
+  setTextFromStr('svg_CruisingSpeed', CruisingSpeedUnitValue + CruisingSpeedNumText, 75, 5);
+
+  let LevelText = document.getElementById('Level_Type')?.value ?? '';
+  if (LevelText == 'F' || LevelText == 'A')
+    LevelText += ('000' + (document.getElementById('Level_Num')?.value?.toString() ?? '')).slice(-3);
+  setTextFromStr('svg_Level', LevelText, 75, 5);
 
   // Route
 
@@ -78,7 +93,14 @@ function setTextInSvg()
 
   // OtherInformation
 
-  // setText('Endurance', 58, 4);
+  setTextFromStr(
+    'svg_Endurance',
+    ('00' + (document.getElementById('Endurance_HH')?.value?.toString() ?? '')).slice(-2)
+    + ('00' + (document.getElementById('Endurance_MM')?.value?.toString() ?? '')).slice(-2),
+    58,
+    4
+  );
+
   setText('PersonsOnBoard', 42, 3);
   setText('Dinghies_Number', 22, 2);
   setText('Dinghies_Capacity', 42, 3);
