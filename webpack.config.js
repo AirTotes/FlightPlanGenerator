@@ -7,8 +7,8 @@ module.exports = {
     filename: 'flight_plan_sheet.js'
   },
   performance: {
-    maxAssetSize: 1_000_000,
-    maxEntrypointSize: 1_000_000,
+    maxAssetSize: 10_000_000,
+    maxEntrypointSize: 10_000_000,
   },
   // ref: https://zenn.dev/sa2knight/articles/9b19ffd391bca87d7b8c
   devServer: {
