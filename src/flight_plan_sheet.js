@@ -5,10 +5,15 @@ import { ToPDF } from "./to_pdf";
 
 const attr_name_stroke = "stroke";
 
-// ref: https://stackoverflow.com/a/901144
-// ( https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript )
-const params = new Proxy(new URLSearchParams(window.location.search), {
-  get: (searchParams, prop) => searchParams.get(prop),
+// ref: https://gray-code.com/javascript/edit-get-parameter/
+//    : https://gray-code.com/javascript/change-url-at-address-bar/
+const params = new Proxy(new URL(window.location.href), {
+  get: (url, prop) => url.searchParams.get(prop),
+  set: (url, prop, value) =>{
+    url.searchParams.set(prop, value);
+    history.replaceState('', document.title, url.toString());
+    return true;
+  },
 });
 
 function SetValueFromParamName(name)
@@ -262,6 +267,11 @@ function SubscribeEvents()
   subscribeOnChangeEvents(
     'Remarks',
     ev => onRemarksChanged(ev.target.value, Remarks_Strikethrough)
+  );
+
+  subscribeOnChangeEvents(
+    'inputForm',
+    ev => params[ev.target.id] = ev.target.value.toString()
   );
 
   const GenPdfButton = document.getElementById('GenPdfButton');
