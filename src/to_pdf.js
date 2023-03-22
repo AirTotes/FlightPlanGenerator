@@ -150,7 +150,7 @@ function setTextInSvg()
   setMultiLineTextFromStr('AdditionalRequirements');
 }
 
-export function ToPDF()
+async function genJsPDFInstance()
 {
   const doc = new jsPDF('p', 'pt', 'a4');
 
@@ -159,16 +159,20 @@ export function ToPDF()
   const elem = document.getElementById('sheet_svg');
   const svgTextGroup = document.getElementById('svgTextGroup');
 
-  svgTextGroup.style.visibility = 'visible';
-  doc
-    .svg(elem, {
-      x: 0,
-      y: 0,
-      height: 842,
-      width: 595,
-    })
-    .then(() => {
-      svgTextGroup.style.visibility = 'hidden';
+  const v = await doc.svg(elem, {
+    x: 0,
+    y: 0,
+    height: 842,
+    width: 595,
+  });
+  svgTextGroup.style.visibility = 'hidden';
+  return v;
+}
+
+export function ToPDF()
+{
+  genJsPDFInstance()
+    .then(doc => {
       doc.save('test.pdf');
       // const elem = document.getElementById('preview');
       // elem.setAttribute('src', doc.output('datauristring'));
