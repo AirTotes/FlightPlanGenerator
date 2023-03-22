@@ -38,7 +38,12 @@ function SetValueFromParamName(name, func)
   );
 
   if (isValidCheckResult)
-    elem.value = value;
+  {
+    if (elem.type === 'checkbox')
+      elem.checked = value === 'true';
+    else
+      elem.value = value;
+  }
 }
 
 function isValidSelection(elem, value)
@@ -278,7 +283,11 @@ function SubscribeEvents()
 
   subscribeOnChangeEvents(
     'inputForm',
-    ev => params[ev.target.id] = ev.target.value.toString()
+    ev => {
+      const elem = ev.target;
+
+      params[elem.id] = (elem.type === 'checkbox' ? elem.checked : elem.value).toString();
+    }
   );
 
   const GenPdfButton = document.getElementById('GenPdfButton');
