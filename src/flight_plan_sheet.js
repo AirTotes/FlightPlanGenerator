@@ -447,10 +447,17 @@ async function LoadFont()
   document.fonts.add(font);
 }
 
+function HideDownloadButton()
+{
+  if (params['DLBtnHidden'] || params['DLBtnHidden'] == '')
+    document.getElementById('GenPdfButton').style.visibility = 'hidden';
+}
+
 LoadFont();
 
 // DOMツリー構築完了直後に実行
 // ref: https://www.nishishi.com/javascript-tips/onload-page.html
+document.addEventListener("DOMContentLoaded", HideDownloadButton);
 document.addEventListener("DOMContentLoaded", SetValueFromParams);
 document.addEventListener("DOMContentLoaded", SubscribeEvents);
 document.addEventListener("DOMContentLoaded", setInitState);
