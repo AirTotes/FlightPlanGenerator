@@ -80,8 +80,7 @@ function SetStrikethroughFromParamName(name)
   if (value === null)
     return;
 
-  const new_stroke = (value == 'true' ? 'black' : 'none')
-  elem.setAttribute(attr_name_stroke, new_stroke);
+  setStrikethroughVisibility(elem, value == 'true');
 }
 
 function SetValueFromParams()
@@ -343,16 +342,26 @@ function PersonsOnBoard_IsTBNChanged(checked, PersonsOnBoard)
   PersonsOnBoard.required = !checked;
 }
 
+function setStrikethroughVisibility(elem, isVisible)
+{
+  if (!elem)
+    return false;
+
+  elem.setAttribute(attr_name_stroke, isVisible ? "black" : "none");
+  params[elem.id] = isVisible.toString();
+
+  return isVisible;
+}
+
 function ChangeVisibility(...target)
 {
-  let new_stroke = "black"
-  if (target[0].getAttribute(attr_name_stroke) === new_stroke)
-    new_stroke = "none";
+  const isVisible = target[0].getAttribute(attr_name_stroke) === new_stroke;
 
-  target.forEach(v => {
-    v?.setAttribute(attr_name_stroke, new_stroke);
-    params[v.id] = (new_stroke == "black").toString();
-  });
+  target.forEach(v => 
+    setStrikethroughVisibility(v, isVisible)
+  );
+
+  return isVisible;
 }
 
 let last_dinghis_num = "";
@@ -393,7 +402,7 @@ function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
 
 function onRemarksChanged(value, strikethrough)
 {
-  strikethrough.setAttribute(attr_name_stroke, value?.length > 0 ? "none" : "black");
+  setStrikethroughVisibility(strikethrough, !(value?.length > 0));
 }
 
 /* 初期処理 */
