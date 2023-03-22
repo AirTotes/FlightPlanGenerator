@@ -400,7 +400,7 @@ function setDinghiesFormState(hasDinghiesValue, num, cap, colour)
 function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
 {
   setDinghiesFormState(
-    ChangeVisibility(hasDinghies, hasCover),
+    !ChangeVisibility(hasDinghies, hasCover),
     num,
     cap,
     colour,
