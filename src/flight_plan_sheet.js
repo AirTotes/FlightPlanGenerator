@@ -368,18 +368,21 @@ function ChangeVisibility(...target)
   return isVisible;
 }
 
-let last_dinghis_num = "";
-let last_dinghis_capacity = "";
-let last_dinghis_colour = "";
+let last_dinghis_num = null;
+let last_dinghis_capacity = null;
+let last_dinghis_colour = null;
 function setDinghiesFormState(hasDinghiesValue, num, cap, colour)
 {
   const new_input_disabled = !hasDinghiesValue;
   const new_input_required = !new_input_disabled;
   if (hasDinghiesValue)
   {
-    num.value = last_dinghis_num;
-    cap.value = last_dinghis_capacity;
-    colour.value = last_dinghis_colour;
+    if (last_dinghis_num !== null)
+      num.value = last_dinghis_num;
+    if (last_dinghis_capacity !== null)
+      cap.value = last_dinghis_capacity;
+    if (last_dinghis_colour !== null)
+      colour.value = last_dinghis_colour;
   }
   else
   {
@@ -412,6 +415,33 @@ function onRemarksChanged(value, strikethrough)
   setStrikethroughVisibility(strikethrough, !(value?.length > 0));
 }
 
+function setInitState()
+{
+  CruisingSpeedUnitSelected(
+    document.getElementById('CruisingSpeedUnit').value,
+    document.getElementById('CruisingSpeed_Knot'),
+    document.getElementById('CruisingSpeed_Mach'),
+  );
+  LevelTypeSelected(
+    document.getElementById('Level_Type').value,
+    document.getElementById('Level_Num')
+  );
+  TimeMMCarryUp(
+    document.getElementById('Endurance_MM'),
+    document.getElementById('Endurance_HH')
+  );
+  PersonsOnBoard_IsTBNChanged(
+    document.getElementById('PersonsOnBoard_IsTBN').checked,
+    document.getElementById('PersonsOnBoard')
+  );
+  setDinghiesFormState(
+    !getStrikethroughVisibility(document.getElementById('Dinghies')),
+    document.getElementById('Dinghies_Number'),
+    document.getElementById('Dinghies_Capacity'),
+    document.getElementById('Dinghies_Colour'),
+  )
+}
+
 /* 初期処理 */
 
 async function LoadFont()
@@ -428,4 +458,5 @@ LoadFont();
 // ref: https://www.nishishi.com/javascript-tips/onload-page.html
 document.addEventListener("DOMContentLoaded", SetValueFromParams);
 document.addEventListener("DOMContentLoaded", SubscribeEvents);
+document.addEventListener("DOMContentLoaded", setInitState);
 // document.addEventListener("DOMContentLoaded", ToPDF);
