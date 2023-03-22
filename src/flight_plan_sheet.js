@@ -150,6 +150,7 @@ function SetValueFromParams()
 
   // 搭乗する総人数
   SetValueFromParamName('PersonsOnBoard');
+  SetValueFromParamName('PersonsOnBoard_IsTBN');
 
   // 航空機用救命無線機
   SetStrikethroughFromParamName('EmergencyRadio_UHF');
@@ -185,6 +186,9 @@ function SetValueFromParams()
     'Remarks',
     (_, value) => onRemarksChanged(value, document.getElementById('Remarks_Strikethrough'))
   );
+
+  // 機長
+  SetValueFromParamName('PilotInCommand');
 
   // 提出者
   SetValueFromParamName('FilledBy');
