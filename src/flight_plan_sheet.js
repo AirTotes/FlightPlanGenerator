@@ -381,28 +381,10 @@ function ChangeVisibility(...target)
   return isVisible;
 }
 
-let last_dinghis_num = null;
-let last_dinghis_capacity = null;
-let last_dinghis_colour = null;
 function setDinghiesFormState(hasDinghiesValue, num, cap, colour)
 {
   const new_input_disabled = !hasDinghiesValue;
   const new_input_required = !new_input_disabled;
-  if (hasDinghiesValue)
-  {
-    if (last_dinghis_num !== null)
-      num.value = last_dinghis_num;
-    if (last_dinghis_capacity !== null)
-      cap.value = last_dinghis_capacity;
-    if (last_dinghis_colour !== null)
-      colour.value = last_dinghis_colour;
-  }
-  else
-  {
-    last_dinghis_num = num.value;
-    last_dinghis_capacity = cap.value;
-    last_dinghis_colour = colour.value;
-  }
 
   num.disabled = new_input_disabled;
   cap.disabled = new_input_disabled;
