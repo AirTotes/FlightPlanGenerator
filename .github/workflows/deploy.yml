@@ -39,7 +39,7 @@ jobs:
         run: yarn install
       
       - name: Run script
-        run: yarn run build && yarn run inline
+        run: yarn run build && yarn run inline && yarn run minify
 
       - name: Change Permission
         run: find ${{ env.UPLOAD_DIR }} -type f -follow -exec chmod 604 '{}' \;

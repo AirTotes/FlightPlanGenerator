@@ -7,6 +7,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "html-minifier": "^4.0.0",
     "inline-scripts": "^1.7.4",
     "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1",
@@ -20,6 +21,7 @@
     "inline": "./inline.sh",
     "dev": "webpack --mode development",
     "build": "webpack",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "minify": "html-minifier -c html-minifier-config.json -o ./dst/flight_plan_sheet.html ./dst/flight_plan_sheet.html"
   }
 }
