@@ -339,7 +339,6 @@ function TimeMMCarryUp(mm_elem, hh_elem)
 
 function PersonsOnBoard_IsTBNChanged(checked, PersonsOnBoard)
 {
-  console.log(checked, PersonsOnBoard);
   PersonsOnBoard.disabled = checked;
   PersonsOnBoard.required = !checked;
 }
