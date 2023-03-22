@@ -169,6 +169,20 @@ async function genJsPDFInstance()
   return v;
 }
 
+window.GetFlightPlanPdfDataUriResult = undefined;
+async function GetFlightPlanPdfDataUri()
+{
+  window.GetFlightPlanPdfDataUriResult = undefined;
+
+  const doc = await genJsPDFInstance();
+  const result = doc.output('datauristring');
+
+  window.GetFlightPlanPdfDataUriResult = result;
+  return result;
+}
+
+window.GetFlightPlanPdfDataUri = GetFlightPlanPdfDataUri;
+
 export function ToPDF()
 {
   genJsPDFInstance()
