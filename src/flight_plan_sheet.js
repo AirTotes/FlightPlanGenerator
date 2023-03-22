@@ -367,12 +367,9 @@ function ChangeVisibility(...target)
 let last_dinghis_num = "";
 let last_dinghis_capacity = "";
 let last_dinghis_colour = "";
-function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
+function setDinghiesFormState(hasDinghiesValue, num, cap, colour)
 {
-  const new_has_dinghies = !(hasDinghies.getAttribute(attr_name_stroke) === "none");
-
-  const new_stroke_color = new_has_dinghies ? "none" : "black";
-  const new_input_disabled = !new_has_dinghies;
+  const new_input_disabled = !hasDinghiesValue;
   const new_input_required = !new_input_disabled;
   if (new_has_dinghies)
   {
@@ -387,10 +384,6 @@ function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
     last_dinghis_colour = colour.value;
   }
 
-  hasDinghies.setAttribute(attr_name_stroke, new_stroke_color);
-  hasCover.setAttribute(attr_name_stroke, new_stroke_color);
-  params[hasDinghies.id] = params[hasCover.id] = (new_stroke_color == "black").toString();
-
   num.disabled = new_input_disabled;
   cap.disabled = new_input_disabled;
   colour.disabled = new_input_disabled;
@@ -398,6 +391,16 @@ function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
   num.required = new_input_required;
   cap.required = new_input_required;
   colour.required = new_input_required;
+}
+
+function HasDinghiesCheckChanged(hasDinghies, num, cap, hasCover, colour)
+{
+  setDinghiesFormState(
+    ChangeVisibility(hasDinghies, hasCover),
+    num,
+    cap,
+    colour,
+  );
 }
 
 function onRemarksChanged(value, strikethrough)
