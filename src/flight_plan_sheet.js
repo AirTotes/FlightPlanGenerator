@@ -375,7 +375,7 @@ function setDinghiesFormState(hasDinghiesValue, num, cap, colour)
 {
   const new_input_disabled = !hasDinghiesValue;
   const new_input_required = !new_input_disabled;
-  if (new_has_dinghies)
+  if (hasDinghiesValue)
   {
     num.value = last_dinghis_num;
     cap.value = last_dinghis_capacity;
