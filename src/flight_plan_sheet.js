@@ -342,6 +342,10 @@ function PersonsOnBoard_IsTBNChanged(checked, PersonsOnBoard)
   PersonsOnBoard.required = !checked;
 }
 
+function getStrikethroughVisibility(elem)
+{
+  return elem?.getAttribute(attr_name_stroke) === "black";
+}
 function setStrikethroughVisibility(elem, isVisible)
 {
   if (!elem)
@@ -355,7 +359,7 @@ function setStrikethroughVisibility(elem, isVisible)
 
 function ChangeVisibility(...target)
 {
-  const isVisible = target[0].getAttribute(attr_name_stroke) === new_stroke;
+  const isVisible = !getStrikethroughVisibility(target[0]);
 
   target.forEach(v => 
     setStrikethroughVisibility(v, isVisible)
