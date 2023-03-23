@@ -159,6 +159,7 @@ async function genJsPDFInstance()
   const elem = document.getElementById('sheet_svg');
   const svgTextGroup = document.getElementById('svgTextGroup');
 
+  svgTextGroup.style.visibility = 'visible';
   const v = await doc.svg(elem, {
     x: 0,
     y: 0,
