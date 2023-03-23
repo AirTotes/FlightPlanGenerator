@@ -447,10 +447,16 @@ async function LoadFont()
   document.fonts.add(font);
 }
 
-function HideDownloadButton()
+let isDownloadButtonHidden = false;
+function HideDownloadButton(hideButton)
 {
-  if (params['DLBtnHidden'] || params['DLBtnHidden'] == '')
-    document.getElementById('GenPdfButton').style.visibility = 'hidden';
+  isDownloadButtonHidden ||= (hideButton == true || params['DLBtnHidden'] || params['DLBtnHidden'] == '');
+  if (isDownloadButtonHidden)
+  {
+    const elem = document.getElementById('GenPdfButton');
+    if (elem)
+      elem.style.visibility = 'hidden';
+  }
 }
 
 LoadFont();
