@@ -447,10 +447,14 @@ async function LoadFont()
   document.fonts.add(font);
 }
 
-let isDownloadButtonHidden = false;
-function HideDownloadButton(hideButton)
+function HideDownloadButton()
 {
-  isDownloadButtonHidden ||= (hideButton == true || params['DLBtnHidden'] || params['DLBtnHidden'] == '');
+  isDownloadButtonHidden ||= (
+    (typeof window.isDownloadButtonHidden !== 'undefined' && window.isDownloadButtonHidden)
+    || params['DLBtnHidden']
+    || params['DLBtnHidden'] == ''
+  );
+
   if (isDownloadButtonHidden)
   {
     const elem = document.getElementById('GenPdfButton');
@@ -458,6 +462,7 @@ function HideDownloadButton(hideButton)
       elem.style.visibility = 'hidden';
   }
 }
+window.HideDownloadButton = HideDownloadButton;
 
 LoadFont();
 
